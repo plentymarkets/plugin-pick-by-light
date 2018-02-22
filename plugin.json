@@ -1,0 +1,33 @@
+{
+  "name": "PickByLight",
+  "namespace": "PickByLight",
+  "type": "backend",
+  "version": "0.1.0",
+  "license": "AGPL-3.0",
+  "pluginIcon": "icon_plugin_xs.png",
+  "price": 0.00,
+  "description": "Pick by light plugin for plentymarkets",
+  "shortDescription": {
+    "de": "",
+    "en": ""
+  },
+  "categories": [
+    "3519",
+    "3521"
+  ],
+  "keywords": [
+    "PickByLight",
+    "light",
+    "plentymarkets",
+    "pick",
+    "integration"
+  ],
+  "author": "plentymarkets GmbH",
+  "authorIcon": "icon_author_xs.png",
+  "email": "albert.reisswich@plentymarkets.eu",
+  "phone": "",
+  "serviceProvider": "PickByLight\\Providers\\PickByLightServiceProvider",
+  "runOnBuild": [
+    "PickByLight\\Migrations\\CreateSettingsTable"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "defaultEntryPoint": "index.html",
+  "namespace": "PickByLight",
+  "menuEntries": [
+    {
+      "label": "Pick-by-Light",
+      "menu": "system/plenty-app/picklist",
+      "urlKey": "PbLSettings",
+      "entryPoint": "index.html?action=settings"
+    }
+  ]
+}
