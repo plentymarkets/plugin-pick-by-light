@@ -79,6 +79,14 @@ class SettingsService
         /** @var Settings $settings */
         $settings = pluginApp(Settings::class);
 
+        if(empty($settingsValue['currentLEDspeed'])){
+            $settingsValue['currentLEDspeed'] = 'AlwaysOn';
+        }
+
+        if(empty($settingsValue['nextLEDspeed'])){
+            $settingsValue['nextLEDspeed'] = 'Slow';
+        }
+
         $settings->warehouseId = $warehouseId;
         $settings->settings = $settingsValue;
         $settings->config = $config;

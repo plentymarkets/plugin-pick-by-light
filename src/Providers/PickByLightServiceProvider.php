@@ -33,7 +33,7 @@ class PickByLightServiceProvider extends ServiceProvider
                 $itemConfig = $pickByLightHelper->getSingleItemConfig($event->getProcessUserId(),
                     $event->getPickingOrderItemId());
 
-                $event->addPluginConfig('pluginName', $itemConfig->toArray());
+                $event->addPluginConfig('pickbylight', $itemConfig->toArray());
             });
     }
 }
