@@ -7,7 +7,7 @@ use Plenty\Modules\Plugin\DataBase\Contracts\Model;
 /**
  * Class Settings
  *
- * @property int $webstoreId
+ * @property int $warehouseId
  * @property array $settings
  * @property array $config
  * @property string $createdAt
@@ -17,9 +17,9 @@ class Settings extends Model
 {
     protected $autoIncrementPrimaryKey = false;
 
-    protected $primaryKeyFieldName = 'webstoreId';
+    protected $primaryKeyFieldName = 'warehouseId';
 
-    public $webstoreId = 0;
+    public $warehouseId = 0;
     public $settings = [];
     public $config = [];
     public $createdAt = '';

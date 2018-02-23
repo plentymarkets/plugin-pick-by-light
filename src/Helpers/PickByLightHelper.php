@@ -63,7 +63,7 @@ class PickByLightHelper
         /** @var PickingOrderItem $pickingOrderItem */
         $pickingOrderItem = $pickingOrderItemContract->getPickingOrderItemById($orderItemId);
 
-        if (is_null($this->warehouseSettings) || $this->warehouseSettings->webstoreId != $pickingOrderItem->warehouseId) {
+        if (is_null($this->warehouseSettings) || $this->warehouseSettings->warehouseId != $pickingOrderItem->warehouseId) {
             $this->loadWarehouseSettings($pickingOrderItem->warehouseId);
         }
 

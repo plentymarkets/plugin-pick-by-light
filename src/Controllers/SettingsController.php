@@ -32,7 +32,7 @@ class SettingsController extends Controller
      */
     public function saveSettings(Request $request)
     {
-        return json_encode($this->settingsService->saveSettings($request->get('webstoreId'), $request->get('settings'),
+        return json_encode($this->settingsService->saveSettings($request->get('warehouseId'), $request->get('settings'),
             $request->get('config')));
     }
 
@@ -42,6 +42,6 @@ class SettingsController extends Controller
      */
     public function loadSettings(Request $request)
     {
-        return json_encode($this->settingsService->loadSettings($request->get('webstoreId')));
+        return json_encode($this->settingsService->loadSettings($request->get('warehouseId')));
     }
 }

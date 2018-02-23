@@ -30,22 +30,22 @@ class SettingsService
     }
 
     /**
-     * @param int $webstoreId
+     * @param int $warehouseId
      * @return Model
      */
-    public function loadSettings(int $webstoreId)
+    public function loadSettings(int $warehouseId)
     {
-        $result = $this->dataBase->find(Settings::class, $webstoreId);
+        $result = $this->dataBase->find(Settings::class, $warehouseId);
 
         if (is_null($result)) {
             /** @var Settings $result */
             $result = pluginApp(Settings::class);
-            $result->webstoreId = $webstoreId;
+            $result->warehouseId = $warehouseId;
             $result->settings = $this->getEmptySettings();
-            $result->config = $this->getBasicConfig($webstoreId);
+            $result->config = $this->getBasicConfig($warehouseId);
         } elseif ($result instanceof Settings) {
             $loadedConfig = $result->config;
-            $basicConfig = $this->getBasicConfig($webstoreId);
+            $basicConfig = $this->getBasicConfig($warehouseId);
 
             $result->config = array_replace($basicConfig, $loadedConfig);
         }
@@ -54,17 +54,17 @@ class SettingsService
     }
 
     /**
-     * @param int $webstoreId
+     * @param int $warehouseId
      * @param array $settingsValue
      * @param array $config
      * @return Model
      */
-    public function saveSettings(int $webstoreId, array $settingsValue, array $config)
+    public function saveSettings(int $warehouseId, array $settingsValue, array $config)
     {
         /** @var Settings $settings */
         $settings = pluginApp(Settings::class);
 
-        $settings->webstoreId = $webstoreId;
+        $settings->warehouseId = $warehouseId;
         $settings->settings = $settingsValue;
         $settings->config = $config;
 
@@ -87,12 +87,11 @@ class SettingsService
         $columns = ['id', 'name'];
 
         /** @var PaginatedResult $storageLocations */
-        $storageLocations = $storageContract->findStorageLocations(1, 100, $columns);
+        $storageLocations = $storageContract->findStorageLocations(1, 100, $columns)->toArray();
 
-        /** @var StorageLocation $storageLocation */
-        foreach ($storageLocations as $storageLocation) {
-            $config[$storageLocation->id]['name'] = $storageLocation->name;
-            $config[$storageLocation->id]['ledId'] = '';
+        foreach ($storageLocations['entries'] as $storageLocation) {
+            $config[$storageLocation['id']]['name'] = $storageLocation['name'];
+            $config[$storageLocation['id']]['ledId'] = '';
         }
 
         return $config;
