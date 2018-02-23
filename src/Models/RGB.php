@@ -17,4 +17,13 @@ class RGB extends Model
     public $r = 0;
     public $g = 0;
     public $b = 0;
+	
+	public function toArray()
+	{
+		return [
+			"r" => $this->r,
+			"g" => $this->g,
+			"b" => $this->b
+		];
+	}
 }

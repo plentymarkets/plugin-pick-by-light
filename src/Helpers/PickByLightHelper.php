@@ -55,7 +55,7 @@ class PickByLightHelper
         $itemConfig = pluginApp(ItemConfig::class);
 
         $itemConfig->userId = $userId;
-        $itemConfig->colorRGB = (array)$this->getUserRGBcolor($userId);
+        $itemConfig->colorRGB = $this->getUserRGBcolor($userId)->toArray();
 
         /** @var $pickingOrderItemContract PickingOrderItemRepositoryContract */
         $pickingOrderItemContract = pluginApp(PickingOrderItemRepositoryContract::class);

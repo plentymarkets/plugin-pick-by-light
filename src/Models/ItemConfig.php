@@ -25,4 +25,17 @@ class ItemConfig extends Model
     public $currentLEDspeed = '';
     public $nextLEDspeed = '';
     public $colorRGB = [];
+	
+	public function toArray()
+	{
+		return [
+			"deviceId" => $this->deviceId,
+			"soapURL" => $this->soapURL,
+			"userId" => $this->userId,
+			"ledId" => $this->ledId,
+			"currentLEDspeed" => $this->currentLEDspeed,
+			"nextLEDspeed" => $this->nextLEDspeed,
+			"colorRGB" => $this->colorRGB
+		];
+	}
 }
