@@ -1,0 +1,19 @@
+{
+  "general": "General",
+  "warehouses" : "Warehouses",
+  "storageLocations" : "Storage Locations",
+  "soapUrlInput" : "SOAP Server URL",
+  "deviceId" : "Device ID",
+  "save" : "Save",
+  "saved" : "Succesfully Saved",
+  "notSaved" : "Not Saved",
+  "currentLEDSpeedInput" : "LED speed for current Storage Location",
+  "nextLEDSpeedInput" : "LED speed for next Storage Location",
+  "ledSpeedStatic" : "Static",
+  "ledSpeedSlow" : "Slow",
+  "ledSpeedMedium" : "Medium",
+  "ledSpeedFast" : "Fast",
+  "ledSpeedOff" : "Off",
+  "deviceSettings" : "Device Settings",
+  "ledSettings" : "LED Settings"
+}
