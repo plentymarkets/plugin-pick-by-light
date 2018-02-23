@@ -89,9 +89,11 @@ class SettingsService
         /** @var PaginatedResult $storageLocations */
         $storageLocations = $storageContract->findStorageLocations(1, 100, $columns)->toArray();
 
+        /** @var StorageLocation $storageLocation */
         foreach ($storageLocations['entries'] as $storageLocation) {
-            $storageLocation['ledId'] = '';
-            $config[] = $storageLocation;
+            $storageArray = $storageLocation->toArray();
+            $storageArray['ledId'] = '';
+            $config[] = $storageArray;
         }
 
         return $config;
