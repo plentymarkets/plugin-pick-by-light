@@ -91,6 +91,7 @@ class SettingsService
 
         foreach ($storageLocations['entries'] as $storageLocation) {
             $config[$storageLocation['id']] = $storageLocation;
+            $config[$storageLocation['id']]['ledId'] = '';
         }
 
         return $config;
