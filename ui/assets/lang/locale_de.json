@@ -2,8 +2,8 @@
   "general": "Allgemein",
   "warehouses" : "Lager",
   "storageLocations" : "Lagerorte",
-  "soapUrlInput" : "SOAP Server URL",
-  "deviceIdInput" : "Geräte ID",
+  "soapUrlInput" : "SOAP-Server-URL",
+  "deviceIdInput" : "Geräte-ID",
   "save" : "Speichern",
   "saved" : "Erfolgreich gespeichert",
   "notSaved" : "Nicht gespeichert",
@@ -14,6 +14,6 @@
   "ledSpeedMedium" : "Mittel",
   "ledSpeedFast" : "Schnell",
   "ledSpeedOff" : "Aus",
-  "deviceSettings" : "Geräte Einstellungen",
-  "ledSettings" : "LED Einstellungen"
+  "deviceSettings" : "Geräteeinstellungen",
+  "ledSettings" : "LED-Einstellungen"
 }
