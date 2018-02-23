@@ -6,7 +6,7 @@
       "label": "Pick-by-Light",
       "menu": "system/plenty-app/picklist",
       "urlKey": "PbLSettings",
-      "entryPoint": "index.html?action=settings"
+      "entryPoint": "index.html"
     }
   ]
 }
