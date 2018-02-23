@@ -74,9 +74,9 @@ class PickByLightHelper
         $itemConfig->currentLEDspeed = $settings['currentLEDspeed'];
         $itemConfig->nextLEDspeed = $settings['nextLEDspeed'];
 
-        foreach ($this->warehouseSettings->config as $storageId => $value) {
-            if ($storageId == $pickingOrderItem->holdingArea) {
-                $itemConfig->ledId = $value['ledId'];
+        foreach ($this->warehouseSettings->config as $config) {
+            if ($config['id'] == $pickingOrderItem->holdingArea) {
+                $itemConfig->ledId = $config['ledId'];
                 break;
             }
         }
