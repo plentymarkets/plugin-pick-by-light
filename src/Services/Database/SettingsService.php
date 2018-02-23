@@ -46,8 +46,23 @@ class SettingsService
         } elseif ($result instanceof Settings) {
             $loadedConfig = $result->config;
             $basicConfig = $this->getBasicConfig($warehouseId);
+            $mergedConfig = [];
 
-            $result->config = array_replace($basicConfig, $loadedConfig);
+            if (!is_null($loadedConfig)) {
+                foreach ($basicConfig as $basicValue) {
+                    foreach ($loadedConfig as $loadedValue) {
+                        if ($basicValue['id'] == $loadedValue['id']) {
+                            $basicValue['ledId'] = $loadedValue['ledId'];
+                            break;
+                        }
+                    }
+                    $mergedConfig[] = $basicValue;
+                }
+            } else {
+                $mergedConfig = $basicConfig;
+            }
+
+            $result->config = $mergedConfig;
         }
 
         return $result;
@@ -87,7 +102,7 @@ class SettingsService
         $columns = ['id', 'name'];
 
         /** @var PaginatedResult $storageLocations */
-        $storageLocations = $storageContract->findStorageLocations(1, 100, $columns)->toArray();
+        $storageLocations = $storageContract->findStorageLocations(1, 250, $columns)->toArray();
 
         /** @var StorageLocation $storageLocation */
         foreach ($storageLocations['entries'] as $storageLocation) {
