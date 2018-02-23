@@ -90,8 +90,8 @@ class SettingsService
         $storageLocations = $storageContract->findStorageLocations(1, 100, $columns)->toArray();
 
         foreach ($storageLocations['entries'] as $storageLocation) {
-            $config[$storageLocation['id']] = $storageLocation;
-            $config[$storageLocation['id']]['ledId'] = '';
+            $storageLocation['ledId'] = '';
+            $config[] = $storageLocation;
         }
 
         return $config;
