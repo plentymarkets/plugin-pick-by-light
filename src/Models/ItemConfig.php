@@ -12,8 +12,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $soapURL
  * @property int $userId
  * @property string $ledId
- * @property string $currentLEDspeed
- * @property string $nextLEDspeed
+ * @property string $currentLEDSpeed
+ * @property string $nextLEDSpeed
  * @property array $colorRGB
  */
 class ItemConfig extends Model
@@ -22,8 +22,8 @@ class ItemConfig extends Model
     public $soapURL = '';
     public $userId = 0;
     public $ledId = '';
-    public $currentLEDspeed = '';
-    public $nextLEDspeed = '';
+    public $currentLEDSpeed = '';
+    public $nextLEDSpeed = '';
     public $colorRGB = [];
 	
 	public function toArray()
@@ -33,8 +33,8 @@ class ItemConfig extends Model
 			"soapURL" => $this->soapURL,
 			"userId" => $this->userId,
 			"ledId" => $this->ledId,
-			"currentLEDspeed" => $this->currentLEDspeed,
-			"nextLEDspeed" => $this->nextLEDspeed,
+			"currentLEDSpeed" => $this->currentLEDSpeed,
+			"nextLEDSpeed" => $this->nextLEDSpeed,
 			"colorRGB" => $this->colorRGB
 		];
 	}

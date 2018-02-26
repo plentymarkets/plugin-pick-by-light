@@ -71,8 +71,8 @@ class PickByLightHelper
 
         $itemConfig->deviceId = $settings['deviceId'];
         $itemConfig->soapURL = $settings['soapURL'];
-        $itemConfig->currentLEDspeed = $settings['currentLEDspeed'];
-        $itemConfig->nextLEDspeed = $settings['nextLEDspeed'];
+        $itemConfig->currentLEDSpeed = $settings['currentLEDspeed'];
+        $itemConfig->nextLEDSpeed = $settings['nextLEDspeed'];
 
         foreach ($this->warehouseSettings->config as $config) {
             if ($config['id'] == $pickingOrderItem->holdingArea) {
