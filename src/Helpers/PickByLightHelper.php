@@ -100,8 +100,8 @@ class PickByLightHelper
         $user = $userContract->getUserById($userId);
 
         $rgb->r = hexdec(substr($user->color, 1, 2));
-        $rgb->g = hexdec(substr($user->color, 3, 4));
-        $rgb->b = hexdec(substr($user->color, 5, 6));
+        $rgb->g = hexdec(substr($user->color, 3, 2));
+        $rgb->b = hexdec(substr($user->color, 5, 2));
 
         return $rgb;
     }
